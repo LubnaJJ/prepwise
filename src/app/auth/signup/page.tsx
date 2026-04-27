@@ -25,7 +25,7 @@ export default function Signup() {
     router.push('/dashboard')
   }
 
-  const inputStyle = {width:'100%', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', color:'white', borderRadius:'12px', padding:'14px 16px', fontSize:'14px', outline:'none'}
+  const inputStyle = {width:'100%', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', color:'white', borderRadius:'12px', padding:'14px 16px', fontSize:'14px', outline:'none', boxSizing:'border-box' as const}
   const labelStyle = {color:'rgba(255,255,255,0.4)', fontSize:'11px', letterSpacing:'2px', textTransform:'uppercase' as const, display:'block', marginBottom:'8px'}
 
   return (
@@ -33,10 +33,10 @@ export default function Signup() {
       <Link href="/" style={{color:'white', fontWeight:800, fontSize:'24px', textDecoration:'none', marginBottom:'8px', letterSpacing:'-0.5px'}}>
         Prep<span style={{color:'#c9a96e'}}>Wise</span>
       </Link>
-      <p style={{color:'rgba(255,255,255,0.3)', fontSize:'14px', marginBottom:'40px'}}>Create your free account</p>
+      <p style={{color:'rgba(255,255,255,0.3)', fontSize:'14px', marginBottom:'32px'}}>Create your free account</p>
 
-      <div style={{width:'100%', maxWidth:'420px', background:'#111118', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'20px', padding:'36px'}}>
-        <h2 style={{color:'white', fontWeight:700, fontSize:'22px', marginBottom:'28px'}}>Get Started Free</h2>
+      <div style={{width:'100%', maxWidth:'420px', background:'#111118', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'20px', padding:'clamp(24px, 5vw, 36px)'}}>
+        <h2 style={{color:'white', fontWeight:700, fontSize:'22px', marginBottom:'24px'}}>Get Started Free</h2>
 
         {error && (
           <div style={{background:'rgba(220,38,38,0.1)', border:'1px solid rgba(220,38,38,0.2)', color:'#f87171', fontSize:'13px', padding:'12px 16px', borderRadius:'10px', marginBottom:'20px'}}>
@@ -45,11 +45,11 @@ export default function Signup() {
         )}
 
         <form onSubmit={handleSignup}>
-          <div style={{marginBottom:'18px'}}>
+          <div style={{marginBottom:'16px'}}>
             <label style={labelStyle}>Full Name</label>
             <input type="text" value={name} onChange={e => setName(e.target.value)} required placeholder="Lubna Janaan" style={inputStyle} />
           </div>
-          <div style={{marginBottom:'18px'}}>
+          <div style={{marginBottom:'16px'}}>
             <label style={labelStyle}>Email</label>
             <input type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="you@example.com" style={inputStyle} />
           </div>
