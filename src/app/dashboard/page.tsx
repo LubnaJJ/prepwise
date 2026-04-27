@@ -98,6 +98,8 @@ export default function Dashboard() {
             {[
               {icon:'⊞', label:'Dashboard', active:true, href:'/dashboard'},
               {icon:'✦', label:'New Analysis', active:false, href:'/analyze'},
+              { icon: '◈', label: 'Job Tracker', active: false, href: '/tracker' },
+              { icon: '📄', label: 'CV Score', href: '/cv-score', active: false },
             ].map(item => (
               <Link key={item.label} href={item.href} style={{display:'flex', alignItems:'center', gap:'10px', padding:'10px 12px', borderRadius:'8px', marginBottom:'4px', background:item.active ? 'rgba(201,169,110,0.1)' : 'transparent', color:item.active ? '#c9a96e' : 'rgba(255,255,255,0.4)', textDecoration:'none', fontSize:'14px', fontWeight:item.active ? 600 : 400}}>
                 <span style={{fontSize:'16px'}}>{item.icon}</span>{item.label}
