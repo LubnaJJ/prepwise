@@ -26,8 +26,25 @@ export default function Analyze() {
       const supabase = createClient()
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {
-        await supabase.from('analyses').insert({ user_id:user.id, job_title:jobTitle||'Unknown Role', company:company||'Unknown Company', match_score:data.matchScore, result:data })
-      }
+  const { error: saveError } = await supabase
+    .from('analyses')
+    .insert({
+      user_id: user.id,
+      job_title: jobTitle || 'Unknown Role',
+      company: company || 'Unknown Company',
+      match_score: data.matchScore,
+      result: data,
+    })
+  if (saveError) {
+    console.error('SAVE ERROR:', saveError)
+    alert('Save error: ' + saveError.message)
+  } else {
+    console.log('SAVED SUCCESSFULLY')
+  }
+} else {
+  console.error('NO USER FOUND')
+  alert('Not logged in!')
+}
       setResult(data)
     } catch(e: any) {
       setError(e.message || 'Analysis failed. Please try again.')
