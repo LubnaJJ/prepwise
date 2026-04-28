@@ -45,14 +45,18 @@ export default function Home() {
           Upload your CV, paste a job description, and get instant match scores, tailored interview questions, and a personalised cover letter.
         </p>
 
-        <div className="hero-actions" style={{display:'flex', gap:'14px', marginBottom:'72px', width:'100%', maxWidth:'400px', justifyContent:'center'}}>
-          <Link href="/auth/signup" style={{background:'#c9a96e', color:'black', textDecoration:'none', fontWeight:700, padding:'15px 32px', borderRadius:'100px', fontSize:'14px', boxShadow:'0 8px 32px rgba(201,169,110,0.25)', flex:1, textAlign:'center', display:'flex', alignItems:'center', justifyContent:'center'}}>
-            Start For Free →
-          </Link>
-          <Link href="/auth/login" style={{background:'transparent', color:'rgba(255,255,255,0.6)', textDecoration:'none', border:'1px solid rgba(255,255,255,0.12)', padding:'15px 32px', borderRadius:'100px', fontSize:'14px', flex:1, textAlign:'center', display:'flex', alignItems:'center', justifyContent:'center'}}>
-            Sign In
-          </Link>
-        </div>
+        {/* Main CTA buttons */}
+<div className="hero-actions" style={{display:'flex', gap:'14px', marginBottom:'72px', width:'100%', maxWidth:'560px', justifyContent:'center', flexWrap:'wrap'}}>
+  <Link href="/analyze" style={{background:'#c9a96e', color:'black', textDecoration:'none', fontWeight:700, padding:'15px 32px', borderRadius:'100px', fontSize:'14px', boxShadow:'0 8px 32px rgba(201,169,110,0.25)', flex:1, textAlign:'center', display:'flex', alignItems:'center', justifyContent:'center', whiteSpace:'nowrap'}}>
+    Try Demo →
+  </Link>
+  <Link href="/auth/signup" style={{background:'transparent', color:'rgba(255,255,255,0.6)', textDecoration:'none', border:'1px solid rgba(255,255,255,0.12)', padding:'15px 32px', borderRadius:'100px', fontSize:'14px', flex:1, textAlign:'center', display:'flex', alignItems:'center', justifyContent:'center'}}>
+    Sign Up Free
+  </Link>
+  <Link href="/auth/login" style={{background:'transparent', color:'rgba(255,255,255,0.6)', textDecoration:'none', border:'1px solid rgba(255,255,255,0.12)', padding:'15px 32px', borderRadius:'100px', fontSize:'14px', flex:1, textAlign:'center', display:'flex', alignItems:'center', justifyContent:'center'}}>
+    Sign In
+  </Link>
+</div>
 
         <div className="feature-grid" style={{display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'14px', maxWidth:'900px', width:'100%'}}>
           {[

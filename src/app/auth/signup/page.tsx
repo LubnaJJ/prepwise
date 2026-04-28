@@ -67,6 +67,11 @@ export default function Signup() {
           Already have an account?{' '}
           <Link href="/auth/login" style={{color:'#c9a96e', textDecoration:'none'}}>Sign in</Link>
         </p>
+        <div style={{textAlign:'center', marginTop:'8px'}}>
+  <Link href="/dashboard" style={{color:'rgba(255,255,255,0.3)', fontSize:'12px', textDecoration:'none'}}>
+    Just want to look around? <span style={{color:'#c9a96e', textDecoration:'underline'}}>Try the demo →</span>
+  </Link>
+</div>
       </div>
     </div>
   )

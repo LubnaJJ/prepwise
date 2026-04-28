@@ -14,7 +14,11 @@ export default function Dashboard() {
     const load = async () => {
       const supabase = createClient()
       const { data: { user } } = await supabase.auth.getUser()
-      if (!user) { router.push('/auth/login'); return }
+      if (!user) {
+  // Demo mode — show empty dashboard without redirecting
+  setLoading(false)
+  return
+}
       setUser(user)
       const { data } = await supabase.from('analyses').select('*').order('created_at', { ascending: false }).limit(20)
       setAnalyses(data || [])

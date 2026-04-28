@@ -60,6 +60,11 @@ export default function Login() {
           No account?{' '}
           <Link href="/auth/signup" style={{color:'#c9a96e', textDecoration:'none'}}>Create one free</Link>
         </p>
+        <div style={{textAlign:'center', marginTop:'16px'}}>
+  <Link href="/dashboard" style={{color:'rgba(255,255,255,0.3)', fontSize:'12px', textDecoration:'none'}}>
+    Just want to look around? <span style={{color:'#c9a96e', textDecoration:'underline'}}>Try the demo →</span>
+  </Link>
+</div>
       </div>
     </div>
   )
